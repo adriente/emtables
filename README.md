@@ -9,19 +9,21 @@ Useful tables for electron spectro-microscopy.
 ## Installation
 
 
-### General linux
+### General unix
 
 
-First install `xraylib`. Instructions are here:
-https://github.com/tschoonj/xraylib/wiki/Installation-instructions
+First install `xraylib`. 
 
 On mac, you simply do
 ```
 brew install tschoonj/tap/xraylib
 ```
+On other linux system, follow:
+https://github.com/tschoonj/xraylib/wiki/Installation-instructions
 
 Then initiate the virtual environnement and install the packages using:
 ```
+pipenv --sites-packages --python=/path/to/python/with/xraylib
 pipenv shell
 pipenv install
 ```
