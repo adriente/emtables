@@ -31,3 +31,23 @@ pipenv --python=/path/to/anaconda3/bin/python --site-packages
 pipenv install -e .
 ```
 But I don't think it makes sense. 
+
+## Usage
+
+This a temporary usage but for now it works. 
+
+### For EDXS table
+
+Go to the tables folder and run : 
+```
+python EDXS_table.py
+```
+It will print a reduced version of the table (gold only with reduced electron energy). Then you will be prompted if you want to output the full table. To accept press y then enter. 
+
+### For absorption coefficient table
+
+Go to the tables folder and run : 
+```
+python abscoeff_table.py
+```
+It will print a reduced version of the table (gold only). Then you will be prompted if you want to output the full table. To accept press y then enter. 
