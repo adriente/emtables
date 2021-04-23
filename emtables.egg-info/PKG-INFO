@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: emtables
+Version: 0.0.1
+Summary: Useful tables for electron spectro-microsocopy
+Home-page: https://github.com/adriente/SNMF_EDXS
+Author: Adrien Teurtie, Nathanael Perraudin
+Author-email: nathanael.perraudin@sdsc.ethz.ch
+License: MIT
+Description: # This README needs an update
+        
+        # EMtables
+        blabla
+        
+        ## Installation
+        On ubuntu WSL 18.04
+        ```
+         wget https://repo.continuum.io/archive/Anaconda3-2020.11-Linux-x86_64.sh
+        ```
+        
+        Then, you can install this package using
+        ```
+        bash Anaconda3-2020.11-Linux-x86_64.sh
+        ```
+        
+        ## Installation as a developer (What you should do Adrien)
+        After setting up your virtual environnement, simply run 
+        ```
+        git submodule update --init --recursive
+        pip install cython
+        pip install -e ".[testing]"
+        ```
+        
+        You can then simply run the tests with 
+        ```
+        pytest snmfem
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        ```
+        
+        ## Getting started with the repo
+        Generate the synthetic dataset. Run the script:
+        ```
+        python scripts/generate_synthetic_dataset.py
+        ```
+        
+        ## Running the algorithm
+        Fill a json file with the relevant input parameters such as dataset name, hyperparameters values, etc ... (see the template in scritps/config/). They are two types of configuration files:
+        1. Dataset files
+        2. Experiment files
+        
+        To run an experiment, you can use 
+        ```
+        python scripts/synthetic_exp.py json_filename
+        ```
+        For example the following line will execute the experiment with the NMF method and the toy dataset.
+        ```
+        python scripts/synthetic_exp.py exp_NMF_Toy.json
+        ```
+        Since the Toy dataset has 10 samples, it will run 10 different experiment. To only run one experiment, you can use
+        ```
+        python scripts/synthetic_exp.py exp_NMF_Toy.json True 3
+        ```
+        This will run the experiment with the sample 3. Here, the argument `True` set the saving of the matrices G,P and A.
+        
+        The experiment script produces two ouputs : 
+        * A .npz file with the G, P and A matrices (one file for each sample if the second argument is set to `True`)
+        * A .json file containing the scores obtained based on the ground truth (and informations on the input used). One file is used for all samples.
+        
+        
+        For now it is supported for NMF only and the user needs to provide artificial data with ground truths
+        
+        ## Todo
+        * Integrate xraylib to generate a more accurate `xrays.json`
+        * Integrate a database to calculate absorption coefficients
+        * Integrate detector artefacts 
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >3.6
+Description-Content-Type: text/markdown
+Provides-Extra: testing

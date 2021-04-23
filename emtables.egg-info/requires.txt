@@ -1,0 +1,10 @@
+numpy
+pandas
+pathlib
+
+[testing]
+flake8
+pytest
+twine
+setuptools
+wheel
