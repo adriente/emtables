@@ -66,7 +66,6 @@ This a temporary usage but for now it works.
 
 ### For EDXS table
 
-Go to the tables folder and run : 
 ```
 python /emtables/tables/EDXS_table.py
 ```
@@ -74,7 +73,6 @@ It will print a reduced version of the table (gold only with reduced electron en
 
 ### For absorption coefficient table
 
-Go to the tables folder and run : 
 ```
 python /emtables/tables/abscoeff_table.py
 ```
