@@ -22,12 +22,12 @@ brew install tschoonj/tap/xraylib
 
 Then initiate the virtual environnement and install the packages using:
 ```
-pipenv shell
 pipenv install
+pipenv shell
 ```
 
 ### Anaconda
-On ubuntu WSL 18.04
+- On ubuntu WSL 18.04
 
 First install anaconda : 
 ```
@@ -36,18 +36,26 @@ First install anaconda :
 ```
 bash Anaconda3-2020.11-Linux-x86_64.sh
 ```
-
+```
+conda install -c conda-forge xraylib
+```
 Then install with pipenv : 
 ```
 cd working_directory
 ```
 ```
-pipenv install --python=/path/to/anaconda3/bin/python --site-packages -e .
+pipenv --python=/path/to/anaconda3/bin/python --site-packages
+pipenv install
 ```
-I did in two steps :
+- Without the Pipfile :
 ```
 pipenv --python=/path/to/anaconda3/bin/python --site-packages
 pipenv install
+```
+- Daily usage once installed : 
+Activate the virtual environment using : 
+```
+pipenv shell
 ```
 
 ## Usage
