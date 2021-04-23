@@ -49,10 +49,10 @@ cd working_directory
 pipenv --python=/path/to/anaconda3/bin/python --site-packages
 pipenv install
 ```
-- Without the Pipfile :
+- Without the Pipfile:
 ```
 pipenv --python=/path/to/anaconda3/bin/python --site-packages
-pipenv install
+pipenv install -e .
 ```
 - Daily usage once installed : 
 Activate the virtual environment using : 
