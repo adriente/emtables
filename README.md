@@ -68,7 +68,7 @@ This a temporary usage but for now it works.
 
 Go to the tables folder and run : 
 ```
-python EDXS_table.py
+python /emtables/tables/EDXS_table.py
 ```
 It will print a reduced version of the table (gold only with reduced electron energy). Then you will be prompted if you want to output the full table. To accept press y then enter. 
 
@@ -76,6 +76,6 @@ It will print a reduced version of the table (gold only with reduced electron en
 
 Go to the tables folder and run : 
 ```
-python abscoeff_table.py
+python /emtables/tables/abscoeff_table.py
 ```
 It will print a reduced version of the table (gold only). Then you will be prompted if you want to output the full table. To accept press y then enter. 
