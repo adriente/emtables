@@ -49,10 +49,10 @@ cd working_directory
 pipenv --python=/path/to/anaconda3/bin/python --site-packages
 pipenv install
 ```
-- Without the Pipfile :
+- Without the Pipfile:
 ```
 pipenv --python=/path/to/anaconda3/bin/python --site-packages
-pipenv install
+pipenv install -e .
 ```
 - Daily usage once installed : 
 Activate the virtual environment using : 
@@ -66,16 +66,14 @@ This a temporary usage but for now it works.
 
 ### For EDXS table
 
-Go to the tables folder and run : 
 ```
-python EDXS_table.py
+python /emtables/tables/EDXS_table.py
 ```
 It will print a reduced version of the table (gold only with reduced electron energy). Then you will be prompted if you want to output the full table. To accept press y then enter. 
 
 ### For absorption coefficient table
 
-Go to the tables folder and run : 
 ```
-python abscoeff_table.py
+python /emtables/tables/abscoeff_table.py
 ```
 It will print a reduced version of the table (gold only). Then you will be prompted if you want to output the full table. To accept press y then enter. 
