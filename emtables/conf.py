@@ -7,6 +7,8 @@ BASE_PATH = Path(__file__).parent
 # Path of the db
 DB_PATH = BASE_PATH / Path("Data/")
 
+PERIODIC_TABLE_FILE = DB_PATH / Path("Periodic-Table-JSON/PeriodicTableJSON.json")
+
 LOW_OV_FILE = DB_PATH / Path("Bote2009_lowOV.txt")
 HIGH_OV_FILE = DB_PATH / Path("Bote2009_highOV.txt")
 

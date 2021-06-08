@@ -1,0 +1,3 @@
+[submodule "emtables/Data/Periodic-Table-JSON"]
+	path = emtables/Data/Periodic-Table-JSON
+	url = https://github.com/Bowserinator/Periodic-Table-JSON.git

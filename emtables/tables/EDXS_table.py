@@ -4,11 +4,23 @@ from emtables.ics_EDXS.EDXS_sdicts import create_transition_dict, create_shell_d
 import xraylib as xr
 
 class EDXSTable (EMTable) : 
-    def __init__ (self, cs_threshold = 1e-25, **kwargs) :
+    def __init__ (self, cs_threshold = 1e-25, beam_energy = 200, energy_range = 20, **kwargs) :
         super().__init__(**kwargs)
+        try :
+            self.energy_start = energy_range[0]
+            self.energy_end = energy_range[1]
+        except TypeError :
+            self.energy_start = 0
+            self.energy_end = energy_range
+        self.beam_energy = beam_energy
         self.cs_threshold = cs_threshold
-        self.mdata["type"] =  "EM_EDXS_Xrays"
+        
+        self.mdata["beam_energy"] = beam_energy
+        self.mdata["energy_start"] = self.energy_start
+        self.mdata["energy_end"] = self.energy_end
         self.mdata["cs_threshold"] = cs_threshold
+        self.mdata["type"] =  "EM_EDXS_Xrays"
+        
         
     def generate_table (self,lines = False) :
         element_dict = {}
@@ -56,7 +68,7 @@ class EDXSTable (EMTable) :
         self.table = element_dict
         
 if __name__ == "__main__" :
-    t = EDXSTable(elements = [79],beam_energy = 3, energy_range = 20)
+    t = EDXSTable(elements = [26],beam_energy = 200, energy_range = 20)
     t.generate_table(lines = True)
     print(t.table)
     ask = input("Generate the default table (This will take a while) ? [y|n]")

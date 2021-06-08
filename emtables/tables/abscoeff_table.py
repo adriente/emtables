@@ -67,7 +67,7 @@ class AbsCoeffTable (EMTable) :
         self.table = element_dict
         
 if __name__ == "__main__" :
-    t = AbsCoeffTable(elements = [79],beam_energy = 3, energy_range = 20)
+    t = AbsCoeffTable(elements = [79])
     t.generate_table()
     print(t.table)
     ask = input("Generate the default table (This will take a while) ? [y|n]")
