@@ -2,6 +2,7 @@ from emtables.tables import EMTable
 from emtables.ics_EDXS import ElectronIonization
 from emtables.ics_EDXS.EDXS_sdicts import create_transition_dict, create_shell_dict, create_line_dict
 import xraylib as xr
+import re
 
 class EDXSTable (EMTable) : 
     def __init__ (self, cs_threshold = 1e-25, beam_energy = 200, energy_range = 20, **kwargs) :
@@ -66,6 +67,20 @@ class EDXSTable (EMTable) :
                 if not (ratios == []):
                     element_dict[str(elt)] = {"energies" : energies, "cs" : ratios}
         self.table = element_dict
+        
+    def modify_table_lines (self, elements, line, coeff) : 
+        try :
+            if self.mdata["lines"] :
+                for elt in elements : 
+                    for key in self.table[str(elt)].keys() :
+                        if re.match(r"^{}".format(line),key) : 
+                            self.table[str(elt)][key]["cs"] *=coeff
+            else :
+                print("You need to enable line notation")
+                        
+        except AttributeError : 
+            print("You need to first create a table.")
+     
         
 if __name__ == "__main__" :
     t = EDXSTable(elements = [26],beam_energy = 200, energy_range = 20)
