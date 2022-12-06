@@ -6,10 +6,10 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='emtables',
     version='0.0.1',
-    description='Useful tables for electron spectro-microsocopy',
+    description='Useful tables for electron spectro-microscopy',
     url='https://github.com/adriente/SNMF_EDXS',
     author='Adrien Teurtie, Nathanael Perraudin',
-    author_email='nathanael.perraudin@sdsc.ethz.ch',
+    author_email='adrien.teurtrie@univ-lille.fr, nathanael.perraudin@sdsc.ethz.ch',
     license='MIT',
     packages=setuptools.find_packages(),
     zip_safe=False,
@@ -31,7 +31,7 @@ setuptools.setup(
         'Topic :: Scientific/Engineering'
     ],
     install_requires=[
-        'numpy', 'pandas', 'pathlib'
+        'numpy', 'pandas', 'pathlib','xraylib'
     ],
     python_requires='>3.6',
 )
